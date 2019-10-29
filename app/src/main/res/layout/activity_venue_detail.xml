@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="movieDetailStruct"
+            type="test.foursquare.app.model.structures.MovieDetailStruct" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark"
+        app:cardBackgroundColor="@color/colorPrimaryDark"
+        tools:context=".ui.venueDetail.VenueDetailActivity">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ly_detail_venue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_aval"
+            android:paddingLeft="8dp"
+            android:paddingTop="32dp">
+
+            <TextView
+                android:id="@+id/txt_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="350dp"
+                android:padding="8dp"
+                android:maxLines="3"
+                android:text="@={movieDetailStruct.movieStruct.title}"
+                android:textColor="@color/colorPrimary"
+                android:textSize="22sp"
+                android:gravity="left"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Fiddle Leaf FIG Topiary" />
+
+            <TextView
+                android:id="@+id/txt_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="8dp"
+                android:gravity="left"
+                android:text="@={movieDetailStruct.genre}"
+                android:textColor="@color/gray_light"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_name"
+                tools:text="10 Nursury pot" />
+
+            <TextView
+                android:id="@+id/txt_rating"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="2dp"
+                android:text='@={movieDetailStruct.imdbRating}'
+                android:textSize="35sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_category"
+                tools:text="8.1" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="250dp"
+                android:layout_height="0dp"
+                android:adjustViewBounds="true"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="5dp"
+                android:layout_margin="32dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="H,1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_rating">
+
+                <ImageView
+                    android:id="@+id/img_venue"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop" />
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/ly_detail_venue">
+
+            <TextView
+                android:id="@+id/txt_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:padding="16dp"
+                android:singleLine="true"
+                android:text="@{`Actors: `+movieDetailStruct.actors}"
+                android:textColor="@color/transparent50_white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Address: Planting" />
+
+            <TextView
+                android:id="@+id/txt_hour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="2"
+                android:padding="16dp"
+                android:text="@={movieDetailStruct.plot}"
+                android:textColor="@color/transparent70_white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/txt_dislike"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_address" />
+
+            <TextView
+                android:id="@+id/txt_like"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_round_corner"
+                android:drawableLeft="@drawable/ic_flag"
+                android:gravity="center"
+                android:text="@={movieDetailStruct.country}"
+                android:textColor="@color/transparent70_white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:drawablePadding="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/txt_dislike"
+                app:layout_constraintVertical_bias="0.0"
+                tools:text="42" />
+
+            <TextView
+                android:id="@+id/txt_dislike"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_round_corner"
+                android:drawableRight="@drawable/ic_calendar"
+                android:gravity="center"
+                android:drawablePadding="4dp"
+                android:text="@={movieDetailStruct.movieStruct.year}"
+                android:textColor="@color/transparent70_white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="19" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back"
+            android:layout_alignParentTop="true"
+            android:layout_margin="8dp"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/back" />
+
+        <include layout="@layout/progress_view" />
+
+    </RelativeLayout>
+</layout>
