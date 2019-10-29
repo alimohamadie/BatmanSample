@@ -11,4 +11,6 @@
     <string name="loadind">Loading ...</string>
     <string name="error_in_internet_connection">Please check your internet connection.</string>
     <string name="fetch_needed">Detail unavailable until Access internet connection.....</string>
+    <string name="search_hint">Search key word ....</string>
+    <string name="descryption_help_searchview">You can search your favorite movie by click on this icon ....</string>
 </resources>

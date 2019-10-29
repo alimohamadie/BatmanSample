@@ -27,5 +27,5 @@
         android:layout_marginTop="@dimen/dime_64"
         android:adjustViewBounds="true"
         android:tint="@color/transparent70_gray"
-        app:srcCompat="@drawable/img_markopolo" />
+        app:srcCompat="@drawable/img_batman" />
 </LinearLayout>

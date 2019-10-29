@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:215057106888:android:ea691f3be829a36874a2fd",
         "android_client_info": {
-          "package_name": "test.foursquare.app"
+          "package_name": "sample.imdbapi.app"
         }
       },
       "oauth_client": [

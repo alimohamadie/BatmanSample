@@ -7,7 +7,7 @@
 
         <variable
             name="movieDetailStruct"
-            type="test.foursquare.app.model.structures.MovieDetailStruct" />
+            type="sample.imbdapi.app.model.structures.MovieDetailStruct" />
 
     </data>
 
@@ -16,7 +16,7 @@
         android:layout_height="match_parent"
         android:background="@color/colorPrimaryDark"
         app:cardBackgroundColor="@color/colorPrimaryDark"
-        tools:context=".ui.venueDetail.VenueDetailActivity">
+        tools:context=".ui.movieDetail.MovieDetailActivity">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
